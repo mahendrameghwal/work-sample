@@ -1,4 +1,4 @@
-@font-face {
+/* @font-face {
   font-family: 'Segoe UI';
   src: url('SegoeUI.ttf') format('truetype');
   font-weight: 400;
@@ -24,7 +24,7 @@
   src: url('SegoeUIBoldItalic.ttf') format('truetype');
   font-weight: 700;
   font-style: italic;
-}
+} */
 
 *{
   margin: 0;
@@ -46,17 +46,21 @@ body {
   width: 100%;
 }
 nav {
-background: #000407;
+     background: rgb(20, 20, 20);
 min-height: 80px;
 color: white !important;
 width: 100%;
 }
 .nav-tab{
 width: 100%;
-background: #000407;
+background: rgb(20, 20, 20);
 color: white !important;
 position: absolute;
 display: inline-flex;
+}
+.menu-container{
+  width: 100%;
+  border-top: 1px solid gray;
 }
 .content{
   position: absolute;
@@ -67,20 +71,26 @@ display: inline-flex;
   font-weight: 700;
 }
 .banner-2{
-border-left: #999;
+background-color: #dcdadac4;
+}
+.border-left{
+  border-left: 6px solid #938e8e;
 }
 .city{
 display: flex;
+}
+.notice{
+  background-color: #deebf7;
+  border: dashed 1px #5f7baa;
 }
 @media screen and (max-width: 768px) {
   .content{
     position: absolute;
         top: 20%;
         left: 0%;
-        background-color: #827e7e;
   }
   .city{
-    display: none;
+    display: none !important;
   }
   .search {
     display: none;
