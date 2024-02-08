@@ -8,7 +8,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
     const windowWidth = window.innerWidth;
-    if (scrollTop === 0) {
+   
+    if ( scrollTop === 0) {
       header.classList.remove("hidden-header");
       menus.style.marginTop = "0";
     } else {

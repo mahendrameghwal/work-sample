@@ -13,13 +13,13 @@
     integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
 <script src="./script.js" defer></script>
-
 <body>
-
   <header class="fixed-top">
-    <nav class="navbar   scroll-hide   navbar-expand-lg top-navbar ">
+    <nav class="navbar  scroll-hide   navbar-expand-lg top-navbar ">
       <div class="container gap-xl-4  d-flex ">
-        <a class="navbar-brand text-white" href="#">logo</a>
+        <a class="navbar-brand text-white" href="#">
+          <img src="./logo.svg" alt="">
+        </a>
         <div class=" city">
           <div class="vr"></div>
         </div>
@@ -47,7 +47,7 @@
             <div class="input-group-prepend">
               <button type="submit" class="btn btn-link "><img width="25" height="25" src="./image/bing.png" alt=""></button>
             </div>
-            <input type="search" placeholder="Web Search" aria-describedby="button-addon2"
+            <input type="search" placeholder="Web Search" 
               class="form-control  border-0  shadow-none bg-light">
             <div class="input-group-prepend">
               <button type="submit" class="btn btn-link "><i class="fa-solid fa-magnifying-glass" style="color: #0c81da;"></i></button>
@@ -64,9 +64,13 @@
     </nav>
     <nav class="navbar navbar-expand-lg top-navbar menus ">
       <div class="container gap-xl-4 py-2  d-flex ">
-        <a class="nav-item nav-link nav-item dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-          News
+        
+        <li class="nav-item list-group dropdown">
+          <a class="nav-item nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Home
           </a>
+         
+        </li>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse"  >
             <i class=" text-white fa-solid fa-bars"></i>
           </button>

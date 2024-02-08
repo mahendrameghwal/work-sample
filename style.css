@@ -7,14 +7,6 @@ body {
   font-family: "Segoe UI", sans-serif;
 }
 
-/* .sticky.is-sticky {
-  position: fixed;
-  left: 0;
-  right: 0;
-  top: 0;
-  z-index: 1000;
-  width: 100%;
-} */
 nav {
   background: rgb(20, 20, 20);
   min-height: 50px;
@@ -77,6 +69,7 @@ nav {
 
 
 @media screen and (max-width: 768px) {
+ 
   nav {
     background: rgb(20, 20, 20);
     min-height: 60px;
