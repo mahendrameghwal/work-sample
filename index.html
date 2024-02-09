@@ -11,10 +11,13 @@
     crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="./jquery.min.js"></script>
 </head>
 <script src="./script.js" defer></script>
 <body>
+  <!-- header -->
   <header class="fixed-top">
+    <!-- first header -->
     <nav class="navbar  scroll-hide   navbar-expand-lg top-navbar ">
       <div class="container gap-xl-4  d-flex ">
         <a class="navbar-brand text-white" href="#">
@@ -62,6 +65,7 @@
         </div>
       </div>
     </nav>
+    <!-- second header -->
     <nav class="navbar navbar-expand-lg top-navbar menus ">
       <div class="container gap-xl-4 py-2  d-flex ">
         
@@ -119,7 +123,7 @@
 
 
   </div>
- 
+ <!-- content goes here -->
   <main class="main-content ">
     <div class="row  ">
       <div class="col-12 col-md-8">
@@ -237,15 +241,63 @@ To demonstrate the power of the platform Anthony Albanese had Sarah Harris depos
             <strong>step 4:</strong>
             Check your account each day to see how much profit you have made.
           </p>
+          <div class="my-4 ">
+            <p class="text-center" >To see if you qualify, please answer these 3 questions:</p>
+            <!-- user question  -->
+            <div id="mainBody" >
+              <div class="formArea">
+                  <div id="question1">
+                      <div class="questionNumber">Question 1/3:</div>
+                      Are you male or female?
+                      <br>
+                      <button id="question1_yes">Male</button>
+                      <button id="question1_no">Female</button>
+                  </div>
+                  <div id="question2">
+                      <div class="questionNumber">Question 2/3:</div>
+                      Are you over 18 years old?
+                      <br>
+                      <button id="question2_yes">Yes</button>
+                      <button id="question2_no">No</button>
+                  </div>
+                  <div id="question3">
+                      <div class="questionNumber">Question 3/3:</div>
+                      Do you earn less than $120,000 per year?
+                      <br>
+                      <button id="question3_yes">Yes</button>
+                      <button id="question3_no">No</button>
+                  </div>
+                  <div id="loading1" class="loading">
+                      Reviewing Your Answers
+                  </div>
+                  <div id="loading2" class="loading">
+                      Searching for Available Invitations
+                  </div>
+                  <div id="loading3" class="loading">
+                      Checking Allocations at <strong><?= $text['step1name']; ?></strong>                                </div>
+                  <div id="loadingAnim"></div>
+                  <div id="qualify">
+                      <div class="qualifyHeadline">CONGRATULATIONS!</div>
+                      <div class="loadingCopy">You qualify for an invitation. Please click the button below and enter your name and e-mail on the next page to continue!</div>
+                      <a href="<?= $link['step1link']; ?>" target="_blank" class="button">Create <strong><?= $text['step1name']; ?></strong> Account</a>
+                  </div>
+                  <div id="noQualify">
+                      We Are Sorry.
+                      <br>
+                      <div class="loadingCopy">Based on your answers, you do not qualify for this program.</div>
+                  </div>
+              </div>
+          </div>
+          </div>
         </div>
       </div>
-  
+  <!--Advertisement-->
       <div class=" d-none d-md-block  col-md-3 ">
         <div class="d-flex flex-column mb-3  text-center">
           <span class="text-dark">-Advertisement-</span>
          <img class="border-top  " src="./image/ads.jpg" alt="">
       </div>
-    
+    <!-- reviews -->
       <div class="d-flex flex-column mt-2">
         <div class="border  bg-dark-subtle  mb-1" style="height: 2px;"></div>
        <img class="mt-1" src="./image/side1.png" alt="">
@@ -297,11 +349,13 @@ To demonstrate the power of the platform Anthony Albanese had Sarah Harris depos
    
   <br>  Brianna Wiggans, Sydney</p>
 </div>
-  
-      </div>
-    </div>
-  </main>
 
+      </div>
+    
+    </div>
+ 
+  </main>
+   <!-- js file -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
     crossorigin="anonymous">
@@ -332,8 +386,65 @@ To demonstrate the power of the platform Anthony Albanese had Sarah Harris depos
       });
     });
   
-  
   </script>
+  <script type="text/javascript">
+    /*Question 1*/
+    $("#question1_yes").click(function() {
+        $("#question1").fadeOut(500);
+        $("#question2").delay(500).fadeIn(500);
+    });
+    $("#question1_no").click(function() {
+        $("#question1").fadeOut(500);
+        $("#question2").delay(500).fadeIn(500);
+    });
+
+    /*Question 2*/
+    $("#question2_yes").click(function() {
+        $("#question2").fadeOut(500);
+        $("#question3").delay(500).fadeIn(500);
+    });
+    $("#question2_no").click(function() {
+        $("#question2").fadeOut(500);
+        $("#question3").delay(500).fadeIn(500);
+    });
+
+    /*Question 3*/
+    $("#question3_yes").click(function() {
+        $("#question3").fadeOut(500);
+        $("#loadingAnim").delay(500).fadeIn(1).delay(7000).fadeOut(500);
+        $("#loading1").delay(500).fadeIn(500).delay(1500).fadeOut(500);
+        $("#loading2").delay(3000).fadeIn(500).delay(1500).fadeOut(500);
+        $("#loading3").delay(5500).fadeIn(500).delay(1500).fadeOut(500);
+        $("#qualify").delay(8000).fadeIn(500);
+        $("#redirecting").delay(8800).fadeIn(1);
+        $("#loadingAnim2").delay(8800).fadeIn(1);
+
+        var delay = 13000;
+        setTimeout(function() {
+            //window.open('<?= $link['step1link']; ?>', '_blank');
+        }, delay);
+
+    });
+    $("#question3_no").click(function() {
+        /*
+        $("#question3").fadeOut(500);
+        $("#noQualify").delay(500).fadeIn(500);
+        */
+        $("#question3").fadeOut(500);
+        $("#loadingAnim").delay(500).fadeIn(1).delay(7000).fadeOut(500);
+        $("#loading1").delay(500).fadeIn(500).delay(1500).fadeOut(500);
+        $("#loading2").delay(3000).fadeIn(500).delay(1500).fadeOut(500);
+        $("#loading3").delay(5500).fadeIn(500).delay(1500).fadeOut(500);
+        $("#qualify").delay(8000).fadeIn(500);
+        $("#redirecting").delay(8800).fadeIn(1);
+        $("#loadingAnim2").delay(8800).fadeIn(1);
+
+        var delay = 13000;
+        setTimeout(function() {
+            //window.open('<?= $link['step1link']; ?>', '_blank');
+        }, delay);
+    });
+</script>
 </body>
 
 </html>
